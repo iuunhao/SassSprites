@@ -1,10 +1,10 @@
 #[sass-sprite](https://github.com/iuunhao/sass-sprite.git)
 
-本项目是一个简单的`sass-mixin`，因为我在日常的工作开发中，一直使用sass来编写css，这样可以提高我的效率。单为之头疼就是`css-sprite`现在的web项目多多少少都会使用一些，当然如果你用的是 `iconfont`，那就另当别论了。
+本项目是一个简单的`sass-mixin`，我在日常的工作开发中，一直使用sass来编写css，因为这样可以提高我的效率。但为之头疼就是`css-sprite`，现在的web项目或多或少都会使用，当然如果你用的是 `iconfont`，那就另当别论了。
 
-我自己是用sass与compassa来想项目的，单其实`compass`的作用也就是一个输出路径与sprite重命名的作用。
+我自己使用的是sass和compassa，实际上`compass`的作用也就是一个输出路径与sprite重命名的作用。
 
-你也许知道`compass`里面也提供了`sprite`的方法，单在我开来，它并不好用，所以考虑自己用原生sass去实现它。当然，我的方法未必是最好的。
+你也许知道`compass`里面也提供了`sprite`的方法，但在我开来，它并不好用，所以考虑用原生sass的API去重写它。当然，我的想法不一定符合你的想法。以下是实际的应用场景：
 
 ##DEMO
 ```
@@ -63,20 +63,18 @@ $icon-url: sprite-map('icon/*.png');
 
 ```
 
-这里只输出的图片的引用
+这里是输出图片的引用地址`background-image`以及图片的大小`background-size`：
 
 ```
 .sicon01, .sicon02, .sicon03 { background-image: url('../images/icon.png'); background-repeat: no-repeat; background-size: 17px 48px; }
-
 ```
 
-而你在下面的代码会中得到2个属性，它都是自动获取的
+而你会在以下代码中看到3个属性，它们都是自动获取的，S
 
 ```
 .sicon01 { background-position: 0 0; height: 16px; width: 15px; }
-
 ```
-这里图标的`background-position`、`width`、`height`，他们是自动输出，他们也会受到顶部，我们定义的`$ispc`变量的影响，因为你需要告诉它，你是需要输出正常大小的图标还是缩小后的图标。
+分别是图标的`background-position`、`width`、`height`，他们是自动输出，他们也会受到顶部`$ispc`的影响，你需要告诉它，输出的是`正常大小的图标`还是`缩小后的图标`。
 
 我们该如何使用：
 
@@ -90,7 +88,8 @@ Span{
     @include r-sprite(icon02); 
 }
 ```
-输出
+
+输出:
 
 ```
 .sDiv { background-position: 0 0; height: 16px; width: 15px; }
@@ -99,4 +98,6 @@ Span{
 
 ```
 
+`sass-sprite` 目前本人正在实践运用中（通俗说用得还挺爽）。如果你有需要，可以参考我的方法去尝试。欢迎你的`request`。
 
+求Star，欢迎Fork！
