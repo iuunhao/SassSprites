@@ -1,0 +1,11 @@
+.sicon01, .sicon02, .sicon03, .sDiv, .sSpan { background-image: url('../images/icon.png'); background-repeat: no-repeat; background-size: 17px 48px; }
+
+.sicon01 { background-position: 0 0; height: 16px; width: 15px; float: left; }
+
+.sicon02 { background-position: 0 -16px; height: 17px; width: 16px; float: right; }
+
+.sicon03 { background-position: 0 -32px; height: 15px; width: 17px; position: relative; }
+
+.sDiv { background-position: 0 0; height: 16px; width: 15px; }
+
+.sSpan { display: inline-block; background-position: 0 -16px; height: 17px; width: 16px; }
