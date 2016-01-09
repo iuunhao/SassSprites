@@ -3,11 +3,16 @@ $ispc: false;
 //这里是icon的存放文件夹
 $icon-url: sprite-map('icon/*.png');
 //以下为方法
-%r-sprite {
+%r-sprite{ 
     background-image: sprite-url($icon-url);
     background-repeat: no-repeat;
-    $double-width: ceil(image-width(sprite-path($icon-url)) / 2);
-    $double-height: ceil(image-height(sprite-path($icon-url)) / 2);
+    @if ($ispc){
+        $double-width:ceil(image-width(sprite-path($icon-url)) / 2);
+        $double-height:ceil(image-height(sprite-path($icon-url)) / 2);
+    }@else{
+        $double-width:ceil(image-width(sprite-path($icon-url)));
+        $double-height:ceil(image-height(sprite-path($icon-url)));
+    }
     background-size: $double-width $double-height;
 }
 
@@ -45,10 +50,10 @@ $icon-url: sprite-map('icon/*.png');
 }
 
 
-.sDiv{
+Div{
     @include r-sprite(icon01); 
 }
-.sSpan{
+Span{
     display: inline-block;
     @include r-sprite(icon02); 
 }
